@@ -57,6 +57,15 @@ export default function Profile() {
     );
   }
 
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    try{
+      
+    }catch(error){
+      
+    }
+  }
+
   const handleChange = (e) => {
     setFormData({...formData, [e.target.id]: e.target.value});
   }
@@ -65,7 +74,7 @@ export default function Profile() {
     <div className="p-3 max-w-lg mx-auto">
       <h1 className="text-3xl font-semibold my-7">Profile</h1>
 
-      <form className="flex flex-col gap-4">
+      <form onSubmit={handleSubmit} className="flex flex-col gap-4">
         <input
           onChange={(e) => setFile(e.target.files[0])}
           type='file'
