@@ -77,7 +77,7 @@ export default function Profile() {
         return;
       }
       dispatch(updateUserSuccess(data));
-      navigate('/');
+      setUpdateSuccess(true);
     }catch(error){
       dispatch(updateUserFailure(error.message));
     }
@@ -156,6 +156,9 @@ export default function Profile() {
       </div>
 
       <p className='text-red-700 mt-5'>{error ? error : ''}</p>
+      <p className='text-green-700 mt-5'>
+        {updateSuccess ? 'User is updated successfully!' : ''}
+      </p>
     </div>
   )
 }
